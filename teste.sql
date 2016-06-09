@@ -1,3 +1,6 @@
+--Productivity Power Tools 2015
+--Web Essentials
+
 create database cursosql
 
 create table teste (
