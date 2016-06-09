@@ -1,0 +1,41 @@
+﻿@model Vidly.ViewModels.ListMoviesViewModel
+
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*
+    This is a comment    
+    On multiple lines
+*@
+
+@{
+    var className = Model.Movies.Count > 0 ? "popular" : null;
+
+}
+
+@*
+<h2 class="@className">@Model.Movie.Name</h2>
+
+*@
+
+<h2>Filmes:</h2><br />
+
+@if (Model.Movies.Count == 0)
+{
+    <text>Nenhum filme cadastrado. </text>
+}
+
+else
+{
+    <ul>
+
+        @foreach (var movie in Model.Movies)
+        {
+            <li>@Html.ActionLink(movie.Name, "MovieDetails/"+ movie.Name, "Movies")</li>
+        }
+
+     </ul>
+}
+
